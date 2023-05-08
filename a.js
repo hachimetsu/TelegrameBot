@@ -11,8 +11,7 @@ const bot = new TelegramBot('YOUR_BOT_TOKEN', { polling: true });
 bot.sendMessage(chatId, 'Press a button:', {
     reply_markup: {
         inline_keyboard: [
-            [{ text: 'Button 1', callback_data: 'button1' }],
-            [{ text: 'Button 2', callback_data: 'button2' }],
+            
         ],
     },
 });

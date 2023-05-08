@@ -1,6 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 const { TOKEN } = require('./config.json')
-console.colorLog = require('./color.js')
+
 console.clear();
 // const fs = require("fs");
 const path = require("path");
@@ -8,7 +8,7 @@ const path = require("path");
 const bot = new TelegramBot(TOKEN, { polling: true });
 
 bot.commands = new Map();
-
+bot.db = {};
 require(path.join(__dirname, "init.js"))(bot).then( async () => { 
         require(path.join(__dirname, "handleEvents.js"))(bot);
         bot.handleEvents(); 
