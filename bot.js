@@ -1,5 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 const { TOKEN } = require('./config.json')
+const { keepAlive } = require("./server.js")
 
 console.clear();
 // const fs = require("fs");
@@ -21,4 +22,5 @@ require(path.join(__dirname, "init.js"))(bot).then( async () => {
         console.colorLog({ imp: "Bot TOKEN ", text: ` : ${TOKEN}` })
         console.colorLog({ comt: "waiting for Event ...(/)" });
 });
+keepAlive();
 bot.deleteWebHook();
